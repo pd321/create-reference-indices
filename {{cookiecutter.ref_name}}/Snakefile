@@ -1,7 +1,6 @@
 include: 'src/common.smk'
 include: 'src/basic.smk'
 include: 'src/aligner_indices.smk'
-include: 'src/variation.smk'
 
 
 rule all:
