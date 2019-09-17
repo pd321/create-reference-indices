@@ -1,4 +1,4 @@
-# snakemake-create-refindices
+# create-reference-indices
 
 A snakemake workflow to create reference indices and other supplementary files required for sequence analysis
 
