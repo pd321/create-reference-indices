@@ -19,7 +19,7 @@ cookiecutter is a project template system which is helpful in customizing and cl
 Use cookiecutter to clone the workflow
 
 ```bash
-cookiecutter https://github.com/pd321/snakemake-create-refindices.git
+cookiecutter https://github.com/pd321/create-reference-indices.git
 ```
 cookiecutter should prompt you for a project name. This is usually a reference genome version like hg19/hg38/mm10 etc.
 
