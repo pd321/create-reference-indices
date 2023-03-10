@@ -1,20 +1,27 @@
-# Ignore large files
+# Ignoring large files
+
+# Input
+*.fq.gz
+*.fq
+*.fastq.gz
+
+# Output
 *.bam
 *.bai
-*.fastq.gz
-*.fq.gz
 *.bw
+*.bdg
 *.gtf
+*.fa
 
-# Ignore local
-.local
+# Large indices
+idx/star
+idx/kallisto
 
-# Ignore editor files
+# Pycharm files
 .idea
 
-# Ignore test files
-metadata.tsv
-**/.snakemake
-**/results
-**/data
-**/logs
+# Rstudio files
+*.Rhistory
+*.RData
+*.Rproj
+*.Rproj.user

@@ -1,0 +1,42 @@
+$schema: "http://json-schema.org/draft-06/schema#"
+
+description: snakemake configuration file
+
+type: object
+
+properties:
+  threads:
+    type: integer
+  fa:
+    type: string
+  gtf:
+    type: string
+  transcripts_fa:
+    type: string
+  blacklist_bed_url:
+    type: string
+  filt_parY:
+    type: boolean
+  kallisto_idx:
+    type: boolean
+  star_idx:
+    type: boolean
+  salmon_idx:
+    type: boolean
+  bowtie_idx:
+    type: boolean
+  bowtie2_idx:
+    type: boolean
+  star_overhang_lengths:
+    type: string
+
+required:
+  - threads
+  - fa
+  - gtf
+  - filt_parY
+  - kallisto_idx
+  - star_idx
+  - salmon_idx
+  - bowtie_idx
+  - bowtie2_idx

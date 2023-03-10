@@ -1,0 +1,52 @@
+include: 'rules/common.smk'
+include: 'rules/basic.smk'
+include: 'rules/aligner_indices.smk'
+
+out_files = [ "fa/genome.chrom.sizes", "fa/genome.fa.dict", "gtf/tx2gene.tsv", "gtf/geneinfo.tsv"]
+
+if config['blacklist_bed_url'] != "":
+    out_files += ['fa/blacklist_regions.bed']
+
+if config['kallisto_idx']:
+    out_files += ['idx/kallisto/kallisto.idx']
+
+if config['star_idx']:
+    out_files += expand("idx/star/{overhang_length}/SA", overhang_length=star_overhang_lengths)
+
+if config['salmon_idx']:
+    out_files += multiext(
+            "idx/salmon/",
+            "complete_ref_lens.bin",
+            "ctable.bin",
+            "ctg_offsets.bin",
+            "duplicate_clusters.tsv",
+            "info.json",
+            "mphf.bin",
+            "pos.bin",
+            "pre_indexing.log",
+            "rank.bin",
+            "refAccumLengths.bin",
+            "ref_indexing.log",
+            "reflengths.bin",
+            "refseq.bin",
+            "seq.bin",
+            "versionInfo.json",
+        )
+
+if config['bowtie2_idx']:
+    out_files += multiext(
+                "idx/bowtie2/index",
+                ".1.bt2",
+                ".2.bt2",
+                ".3.bt2",
+                ".4.bt2",
+                ".rev.1.bt2",
+                ".rev.2.bt2",
+            )
+
+if config['bowtie_idx']:
+    out_files += ['idx/bowtie/index.1.ebwt']
+
+rule all:
+    input: out_files
+        
