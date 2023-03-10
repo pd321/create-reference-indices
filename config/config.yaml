@@ -14,14 +14,14 @@ transcripts_fa: 'https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/relea
 blacklist_bed_url: 'https://raw.githubusercontent.com/Boyle-Lab/Blacklist/master/lists/mm10-blacklist.v2.bed.gz'
 
 # Removing duplicate entries in par_y regions for genode human releases. Can be set as false for other organisms
-filt_parY: TRUE
+filt_parY: FALSE
 
 # Flags to create/skip particular indices
-kallisto_idx: TRUE
-star_idx: TRUE
-salmon_idx: TRUE
-bowtie_idx: TRUE
-bowtie2_idx: TRUE
+kallisto_idx: FALSE
+star_idx: FALSE
+salmon_idx: FALSE
+bowtie_idx: FALSE
+bowtie2_idx: FALSE
 
 # Star overhang length for reference index creation. Usually a value of 100 should do for reads of 75-150bp
 # But you may want a shorted value for reads <50bp. In this case you can set it to 100,50 to generate two indices.
